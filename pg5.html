@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Desk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #6495ED; /* Set background color to Cornflower Blue */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            height: 100px; /* Reduced height for description box */
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .success-message {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Support Desk</h1>
+    <form action="#" method="post" name="submit-to-google-sheet" onsubmit="return showSuccessMessage()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="roll">Roll Number:</label><br>
+        <input type="text" id="roll" name="roll" required><br>
+        <label for="issue">Select Issue:</label><br>
+        <select id="issue" name="issue" style="height: 40px;"> <!-- Increased height for issue selection box -->
+            <option value="" disabled selected>Select an issue</option> <!-- Default option -->
+            <option value="food">Food Related</option>
+            <option value="battery_vehicle">Battery Vehicle</option>
+            <option value="academics">Academics</option>
+            <option value="bathroom_cleanliness">Cleanliness of Bathroom</option>
+            <option value="ragging">Ragging</option>
+        </select><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div class="success-message" id="successMessage" style="display: none;">Submitted successfully!</div>
+</div>
+</body>
+
+<script>
+    function showSuccessMessage() {
+        document.getElementById('successMessage').style.display = 'block';
+        return false; // Prevent form submission
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyz3SeyLH9EsC8Kid4Tj1wS2a9BqPthdrjhxmgcrA5KjuftXHHSZpRNmEP7zhB-KjcDAQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</html>

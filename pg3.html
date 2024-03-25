@@ -1,0 +1,122 @@
+counselling.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counselling Facilities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: justify;
+            color: #555;
+        }
+        .contact-info {
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .contact-info h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .contact-info p {
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .contact-info ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+        .contact-info ul li {
+            color: #666;
+            margin-bottom: 5px;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Counselling Facilities</h1>
+    <p>Our college offers various counselling services to support students in their academic, personal, and emotional well-being. Whether you're facing academic challenges, struggling with personal issues, or need someone to talk to, our professional counsellors are here to help you.</p>
+   
+    <div class="contact-info">
+        <h2>Boys Counselling:</h2>
+        <p>For counselling appointments or inquiries for boys, please contact:</p>
+        <ul>
+            <li><strong>Mr. John Doe:</strong> Room 201, Boys' Hostel</li>
+            <li><strong>Phone:</strong> +1 (123) 456-7890</li>
+            <li><strong>Email:</strong> john.doe@college.edu</li>
+        </ul>
+    </div>
+
+    <div class="contact-info">
+        <h2>Girls Counselling:</h2>
+        <p>For counselling appointments or inquiries for girls, please contact:</p>
+        <ul>
+            <li><strong>Ms. Jane Smith:</strong> Room 301, Girls' Hostel</li>
+            <li><strong>Phone:</strong> +1 (123) 456-7891</li>
+            <li><strong>Email:</strong> jane.smith@college.edu</li>
+        </ul>
+    </div>
+
+    <h2>Contact Form:</h2>
+    <form action="#" method="post">
+        <label for="student_name">Student's Name:</label><br>
+        <input type="text" id="student_name" name="student_name" required><br>
+        <label for="student_email">Student's Email:</label><br>
+        <input type="email" id="student_email" name="student_email" required><br>
+        <label for="student_roll">Student's Roll Number:</label><br>
+        <input type="text" id="student_roll" name="student_roll" required><br>
+        <label for="student_year">Year:</label><br>
+        <input type="text" id="student_year" name="student_year" required><br>
+        <label for="issue">Issue:</label><br>
+        <textarea id="issue" name="issue" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
